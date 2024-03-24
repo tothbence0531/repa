@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="rootimg/favicon.png">
+    <!-- JAVASCRIPT LINKS -->
+    <script src="rootjs/navbar.js"></script>
+
+    <!--  CSS LINKS -->
+    <link rel="stylesheet" href="rootcss/footer.css">
+    <link rel="stylesheet" href="rootcss/nav.css">
+    <link rel="stylesheet" href="rootcss/root.css">
+    <link rel="stylesheet" href="recipe/css/recipe.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>repa | Nagyi titkos receptjei</title>
+</head>
+<body>
+
+
+    <!-- NAVBAR, SIDEBAR -->
+
+
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#" id="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="18"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>  
+                Főoldal</a></li>
+            <li><a href="recipe.html"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/></svg>
+                Receptek</a></li>
+            <li><a href="shopfront.html"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M570-104q-23 23-57 23t-57-23L104-456q-11-11-17.5-26T80-514v-286q0-33 23.5-56.5T160-880h286q17 0 32 6.5t26 17.5l352 353q23 23 23 56.5T856-390L570-104Zm-57-56 286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640ZM160-800Z"/></svg>
+                Répák</a></li>
+            <li><a href="forum.html"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-240q-17 0-28.5-11.5T240-280v-80h520v-360h80q17 0 28.5 11.5T880-680v600L720-240H280ZM80-280v-560q0-17 11.5-28.5T120-880h520q17 0 28.5 11.5T680-840v360q0 17-11.5 28.5T640-440H240L80-280Zm520-240v-280H160v280h440Zm-440 0v-280 280Z"/></svg>
+                Fórum</a></li>
+            <li><a href="basket.html" id="sidebasket"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+                Kosár</a></li>
+            <li><a href="profile.html" id="sideprofile"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+                Profil</a></li>
+        </ul>
+        <ul>
+            <li>
+                <a id="nav-logo" href="index.html"><img src="rootimg/favicon2.png" alt="" id="logo-img">repa</a>
+            </li>
+            <li><a href="index.html" class="hideOnMobile"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="18"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>  
+                Főoldal</a></li>
+            <li><a href="recipe.html" class="hideOnMobile"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/></svg>
+                Receptek</a></li>
+            <li><a href="shopfront.html" class="hideOnMobile"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M570-104q-23 23-57 23t-57-23L104-456q-11-11-17.5-26T80-514v-286q0-33 23.5-56.5T160-880h286q17 0 32 6.5t26 17.5l352 353q23 23 23 56.5T856-390L570-104Zm-57-56 286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640ZM160-800Z"/></svg>
+                Répák</a></li>
+            <li><a href="forum.html" class="hideOnMobile"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-240q-17 0-28.5-11.5T240-280v-80h520v-360h80q17 0 28.5 11.5T880-680v600L720-240H280ZM80-280v-560q0-17 11.5-28.5T120-880h520q17 0 28.5 11.5T680-840v360q0 17-11.5 28.5T640-440H240L80-280Zm520-240v-280H160v280h440Zm-440 0v-280 280Z"/></svg>
+                Fórum</a></li>
+            <li><a href="basket.html" class="hideOnMobile" id="basket"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></a></li>
+            <li><a href="profile.html" class="hideOnMobile" id="profile"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg></a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+
+    <div id="pic">
+        <h1 id="title">Répás receptek a Nagyi jóvoltából</h1>
+    </div>
+
+    <br>
+
+    <h1 class="head">Levesek</h1>
+    <div class="row">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sarga-repas-brokkoli-kremleves-vegan-recept-foto.jpg" alt="Avatar">
+                    <h1>Sárga répás brokkoli krémleves</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>50 dkg brokkoli</p>
+                    <p>3 közepes db sárgarépa</p>
+                    <p>1 közepes db burgonya</p>
+                    <p>1 közepes db vöröshagyma</p>
+                    <p>2 ek olívaolaj</p>
+                    <p>1 db leveskocka (zöldség)</p>
+                    <p>1 csipet só</p>
+                    <p>7 dl víz</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A zöldségeket megtisztítjuk (a brokkoli szárát is meghámozzuk), apróra vágjuk.</p>
+                    <p>A hagymát olajon megfonnyasztjuk.</p>
+                    <p>Felöntjük 7 dl vízzel, hozzáadjuk a leveskockát, a sót, a zöldségeket, és puhára pároljuk.</p>
+                    <p>Díszítéshez kevés zöldséget kiveszünk, a többit botmixerrel pürésítjük.</p>
+                    <p>Tálaláskor barackmag vagy kökénymagolajat locsolhatunk rá.</p>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sargarepas-sutotokleves-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás sütőtökleves</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>5 dkg vaj</p>
+                    <p>1 db közepes fej vöröshagyma, 50 dkg sütőtök (tisztítva mérve), 2 db közepes sárgarépa (kb. 20 dkg tisztítva mérve)</p>
+                    <p>10 dl víz, 1-2 ek citromlé, 1 tk balzsamecet</p>
+                    <p>2 db erőleveskocka (vagy ételízesítő)</p>
+                    <p>1 tk só, 1-2 ek cukor vagy méz, 1/2 mk őrölt fehér bors, 1/2 mk őrölt fahéj, 1/2 mk őrölt gyömbér</p>
+                    <p>1 dl főzőtejszín</p>
+                    <p>1/4 mk chilipehely (elmaradhat)</p>
+                    <p>1/4 mk durvára őrölt fekete bors (elmaradhat)</p>
+                    <p>5 dkg pirított tökmag</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Vajon megdinszteljük az apróra vágott vöröshagymát, majd hozzáadjuk a sütőtököt és a sárgarépát.</p>
+                    <p>Felöntjük vízzel, hozzáadjuk a leveskockát és a fűszereket, majd puhára főzzük.</p>
+                    <p>Pürésítjük, majd ízesítjük cukorral, citromlével, tejszínnel és sóval.</p>
+                    <p>Megpirítjuk a tökmagot serpenyőben.</p>
+                    <p>Tálaláskor tejszínnel megcsorgatjuk, balzsamecettel, chilipehellyel és borssal ízesítjük.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sargarepas-csirkehusleves-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás csirkehúsleves</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>2 db egész csirkecomb</p>
+                    <p>1 teáskanál só, 2 evőkanál liszt, 1 evőkanál olívaolaj</p>
+                    <p>3 dkg vaj</p>
+                    <p>2 db sárgarépa, 1 db közepes vöröshagyma, 2 gerezd fokhagyma</p>
+                    <p>4 dl hideg víz</p>
+                    <p>1,2 liter húsleves</p>
+                    <p>ízlés szerint őrölt fekete bors, ízlés szerint só, ízlés szerint petrezselyemzöld</p>
+                    <p>1 dl vastagabb cérnametélt</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Csirkecombokat sós vízben megfőzzük. Kihűlés után feldolgozzuk. Vöröshagymát finomra vágjuk, fokhagymát, sárgarépát lereszeljük.</p>
+                    <p>Olívaolajat, vajat és a répát lábasba tesszük, és addig pároljuk, míg a répa kis levet enged. Hozzáadjuk a vágott hagymát, majd beletesszük a fokhagymát.</p>
+                    <p>2 evőkanál liszttel megszórjuk, majd keverjük, míg a zsiradék fel nem veszi a lisztet. Ráöntjük a 4 dl hideg vizet, majd a félretett húslevet. Összefőzzük, a cérnametéltet beletesszük, elkavarjuk. Beletesszük a felaprított húst. Ízlés szerint sózzuk, borsozzuk, összeforraljuk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/burgonyas-sargarepas-kremleves-recept-foto.webp" alt="Avatar">
+                    <h1>Burgonyás sárgarépás krémleves</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>50 dkg burgonya</p>
+                    <p>500 ml tej</p>
+                    <p>500 ml víz</p>
+                    <p>25 dkg vékony sárgarépa</p>
+                    <p>5 dkg 82%-os vaj</p>
+                    <p>1 evőkanál finomra vágott petrezselyem</p>
+                    <p>Ízlés szerint só</p>
+                    <p>2 db tojássárgája</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A fél kg krumplit meghámozom, kockára vágva megfőzöm a fele mennyiségű sós tejes vízben. Nagyon kell rá figyelni, mert könnyen kifut.</p>
+                    <p>A sárgarépát megtisztítom, vékony karikára vágom, és 3 dkg vajon, a petrezselyem nagy részével s egy pici sóval meghintve kis lángon megpárolom.</p>
+                    <p>Amikor a burgonya megpuhult, leturmixolom, felöntöm a maradék tejjel és vízzel, állandó keverés közben felforralom.</p>
+                    <p>Egy leveses tálban a maradék vajat elhabarom a két tojássárgájával,</p>
+                    <p>Fokozatosan rámerem a forró levest, miközben keverem.</p>
+                    <p>Beleteszem a megpárolt petrezselymes sárgarépát, megszórom a maradék petrezselyemmel és azonnal tálalom.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/almas-repas-ceklakremleves-recept-foto.webp" alt="Avatar">
+                    <h1>Almás-répás céklakrémleves</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>2 db cékla</p>
+                    <p>2 db sárgarépa</p>
+                    <p>1 db alma</p>
+                    <p>Szükség szerint víz</p>
+                    <p>3 ek joghurt</p>
+                    <p>1 db leveskocka</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Előkészítjük a répát, céklát, almát.</p>
+                    <p>Megtisztítjuk és feldaraboljuk őket, egy lábasba tesszük.</p>
+                    <p>Felöntjük annyi vízzel, ami ellepi és felforraljuk. Kb. 4 perc.</p>
+                    <p>Ha felforrt, akkor beletesszük a leveskockát és alacsony lángon addig főzzük, amíg meg nem puhul minden hozzávaló. Kb. 12 perc.</p>
+                    <p>Hagyjuk kihűlni.</p>
+                    <p>Ha kihűlt, akkor mehet a turmixba. Botmixerrel is lehet, de úgy darabosabb maradhat.</p>
+                    <p>Ha kész vagyunk, akkor keverünk bele joghurtot és kész is.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/957-krumplis-sargarepas-kolbaszos-tejfolos-leves-habarassal-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás kolbászos tejfölös leves</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>1 kg krumpli, 3 db nagy sárgarépa, 1 db vöröshagyma, 2 cikk fokhagyma</p>
+                    <p>10 dkg füstölt kolbász, 5 dkg csípős füstölt kolbász</p>
+                    <p>3 L húsleves alap vagy víz</p>
+                    <p>3-4 db babérlevél</p>
+                    <p>2 tk vegeta</p>
+                    <p>1/2 mk őrölt köménymag, 1/2 mk őrölt bors</p>
+                    <p>2,5 dl tejföl</p>
+                    <p>1,5 ek liszt (habaráshoz)</p>
+                    
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A hozzávalókat előkészítem.</p>
+                    <p>Egy edénybe zsírt teszek, majd beleteszem a vöröshagymát, és kicsit megpirítom.</p>
+                    <p>Ráteszem a fokhagymát, a sárgarépát, a fűszereket. majd pár percig párolom.</p>
+                    <p>Ráteszem a feldarabolt kolbászt, afeldarabolt krumplit, majd felengedem húslevessel vagy vízzel.</p>
+                    <p>Beleteszem a babérlevelet, majd ráteszek egy fedőt, és hagyom főni. Addig a tejfölt és a lisztet elkeverem csomómentesre kevés vízzel.</p>
+                    <p>Mikor már puha minden, hozzáadom a tejfölös habarást és az ecetet, majd jól kiforralom.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="head">Főételek</h1>
+    <div class="row">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/egyedenyes-kelbimbos-repas-teszta-vegan-recept-foto.webp" alt="Avatar">
+                    <h1>Egyedényes kelbimbós-répás tészta, vegán</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>6 marék tojásmentes tészta</p>
+                    <p>100 ml növényi főzőkrém</p>
+                    <p>1 mk füstölt paprika</p>
+                    <p>1 db zöldségleves kocka</p>
+                    <p>Szükség szerint annyi víz, ami ellepi a zöldségeket</p>
+                    <p>Ízlés szerint só, bors</p>
+                    <p>1 db vöröshagyma</p>
+                    <p>1 gerezd fokhagyma</p>
+                    <p>1 db nagyobb répa</p>
+                    <p>400 gr kelbimbó</p>
+                    <p>2 ek sörélesztőpehely</p>
+                    
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A vöröshagymát, fokhagymát felaprítom. A répákat karikákra vágom, a kelbimbót, ketté vágom. Felmelegítem az edényt, olívaolajat. Megpirítom a vöröshagymát, majd ezt követik a fokhagymadarabok, só, bors, répa karikák. Ezután hozzáadom a félbevágott kelbimbókat. Kb. 5 perc pirítás után felengedem vízzel.</p>
+                    <p>Beledobok egy zöldségkockát. Beleszórom a füstölt fűszer paprikát. Hagyom hogy felfőjön a víz, hozzáadok 6 maréknyi csőtésztát. Amikor a víz már majdnem teljesen elfőtt hozzáadom a főzőkémet és a sörélesztőpelyhet. Elkeverem és tálalhatom is.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/fokhagymas-tilapia-cekla-chips-szel-majonezes-hagymas-repas-retek-salata-recept-foto.webp" alt="Avatar">
+                    <h1>Tilápia céklával, majonézes-répás retek saláta</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>4 db cékla</p>
+                    <p>1 tk só, 1/2 mk őrölt fekete bors</p>
+                    <p>Kevés étolaj</p>
+                    <p>1 kg tilápia filé</p>
+                    <p>3 gerezd zúzott fokhagyma</p>
+                    <p>Csipet só, csipet őrölt fekete bors, csipet őrölt édes pirospaprika</p>
+                    <p>50 g olvasztott vaj</p>
+                    <p>2 db sárgarépa, 3 db vajretek</p>
+                    <p>2 fej sonkahagyma</p>
+                    <p>2 ek tejföl, 2 ek majonéz, 2 tk cukor, 1 tk citromlé, 1 tk só</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A céklát, retket, hagymát vékony karikákra vágjuk, a répát pedig lereszeljük.</p>
+                    <p>A tejfölt, majonézt összekeverjük a sóval, borssal, cukorral és citromlével. Hozzáadjuk a zöldségeket, majd tálalásig hűtőbe tesszük.</p>
+                    <p>Az olajat, sót, borsot összekeverjük, majd ebbe forgatjuk bele a céklát. Ropogósra sütjük előmelegített sütőben 150°C-on 20 perc alatt.</p>
+                    <p>A halat sózzuk, borsozzuk. Az olvasztott vajat összekeverjük a fokhagymával, sóval, borssal és pirospaprikával, majd ebben sütjük meg a hal szeleteket serpenyőben.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/daralt-husos-sargarepas-barna-rizs-recept-foto.webp" alt="Avatar">
+                    <h1>Darált húsos, sárgarépás barna rizs</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>50 dkg darált hús / sertés</p>
+                    <p>25 dkg barna rizs</p>
+                    <p>15 dkg sárgarépa / reszelve</p>
+                    <p>1 fej hagyma</p>
+                    <p>2 gerezd fokhagyma</p>
+                    <p>7 dkg paradicsompüré</p>
+                    <p>5 evőkanál étolaj</p>
+                    <p>Fűszerek ízlés szerint: só, őrölt fekete bors, kakukkfű, petrezselyemzöld</p>
+                    
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A rizst 2 evőkanál étolajon megpirítjuk, majd felöntjük 2x mennyiségű vízzel, és tetszés szerint fűszerezzük. Alacsony hőfokon megpároljuk.</p>
+                    <p>A hagymát apróra vágjuk, majd 3 evőkanál étolajon kissé megpirítjuk. Hozzáadjuk a fokhagymát és a reszelt répát, tovább pirítjuk. Ezután belekeverjük a paradicsompürét.</p>
+                    <p>Végül hozzáadjuk a darált húst, sót, borsot és kakukkfűvet. Adunk hozzá fél dl vizet, majd megpároljuk. A rizst összekeverjük a húsos répával.</p>
+                    <p>A kész ételt megszórjuk petrezselyemzölddel, és készre fűszerezzük. Savanyúsággal, salátával vagy befőttel szervírozhatjuk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sargarepas-narancsos-sutoben-sult-csirkemell-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás, narancsos sütőben sült csirkemell</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>600 gramm csirkemell</p>
+                    <p>1 db vöröshagyma, 1 db lilahagyma, 2 gerezd fokhagyma</p>
+                    <p>2-3 db sárgarépa, 1 db savanykás alma, 1 db narancs frissen facsart leve</p>
+                    <p>1 evőkanál citromlé, 3 evőkanál méz, 2 evőkanál mustár, 20 ml olívaolaj</p>                   
+
+                    <p>1 mokkáskanál gyömbérpor, 1 teáskanál korianderlevél, 1 teáskanál őrölt rozmaring, 1 mokkáskanál frissen őrölt fekete bors, 1 mokkáskanál chilisó, 1 evőkanál só</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A zöldségeket feldolgozom.</p>
+                    <p>Marinád elkészítése: Elkeverem az olívaolajat, mézet, fokhagymát, narancs levét, citromlevet, mustárt, gyömbérport, chilisót, korianderlevelet, őrölt rozmaringot, borsot, és sót.</p>
+                    <p>A sárgarépát csíkokra, a hagymát nagyobb darabokra, az almát cikkekre vágom. A húst tisztítom, majd vastagabb csíkokra vágom.</p>
+                    <p>A sárgarépa csíkokat, csirkemelleket marinádba megforgatom, tepsiben szétterített alma, hagyma darabokra helyezem.</p>
+                    <p>Sütés 220°C-on, 35 percig fólia alatt.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/ajvaros-gnocchi-repas-marhakoftevel-recept-foto.webp" alt="Avatar">
+                    <h1>Ajváros gnocchi répás  marhaköftével</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>20 dkg répa, 40 dkg marhahús</p>
+                    <p>1 kisebb vöröshagyma, 3 gerezd fokhagyma</p>
+                    <p>1/4 tk római kömény, 3 ek étolaj, só, bors</p>
+                    <p>50 dkg bolti gnocci</p>
+                    <p>2 dl tejszín</p>
+                    <p>3 ek Podravka ajvár</p>
+                    <p>só, frissen őrölt bors</p>
+                    <p>friss petrezselyemzöld</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A répát reszeljük le, fonnyasszuk meg 2 evőkanál étolajon a hagymával, köménnyel és fokhagymával együtt.</p>
+                    <p>A gnocchit főzzük meg. Olvasszunk vajat, borítsuk bele a gnocchit, pirítsuk 3-4 percig. Az ajvárt keverjük ki tejszínnel, majd öntsük a gnocchira. Forraljuk össze.</p>
+                    <p>A köfte többi hozzávalóit dolgozzuk össze vele, hengereket formázunk belőlük. Forró serpenyőben 2-3 evőkanál olajon süssük 8-10 percen át.</p>
+                    <p>Ezután nyársakra fűzzük. A gnocchit sózzuk, borsozzuk, majd petrezselyemmel megszórva köftével tálaljuk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sargarepas-oreg-tarhonya-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás tarhonya</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>15 dkg füstölt kolozsvári szalonna, 20 dkg tarhonya</p>
+                    <p>2 evőkanál olaj</p>
+                    <p>1 db közepes vöröshagyma, 4 gerezd fokhagyma</p>
+                    <p>1/2 db fehér paprika, 6 db közepes burgonya, 1 db nagyobb sárgarépa</p>
+                    <p>1 evőkanál őrölt pirospaprika, 1 evőkanál vegeta, 1 evőkanál szárított zöldségkeverék, 1 teáskanál őrölt feketebors, 1 mokkáskanál őrölt fűszerkömény</p>                   
+                    <p>Ízlés szerint só</p>
+                    <p>5 dkg füstölt kolbász</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A zöldségeket tisztítani, darabolni.</p>
+                    <p>A kisebb kockára vágott szalonnát az olajon kisütni. A pörcöt félretenni. A visszamaradt zsiradékon a tarhonyát pirítani, majd az aprított hagymákat, paprikát, paradicsomot megdinsztelni.</p>
+                    <p>Hozzáadni a kis kockára darabolt sárgarépát, a szeletelt kolbászt. Néhány percig együtt pirítani, majd felönteni 2 liter vízzel.</p>
+                    <p>Amikor felforrt, belekerül a kockára vágott burgonya, a szalonnapörc és a fűszerek. Az egészet félpuhára főzni, majd hozzáadni a pirított tarhonyát.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h1 class="head">Desszertek</h1>
+    <div class="row">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sargarepas-muffin-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás muffin</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>150 g margarin</p>
+                    <p>250 g reszelt sárgarépa</p>
+                    <p>200 g kristálycukor</p>
+                    <p>200 g liszt</p>
+                    <p>1,5 kk fahéj</p>
+                    <p>2 tk sütőpor</p>
+                    <p>2 tojás</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Melegítsd elő a sütőt 180 °C-ra, majd olvaszd meg a margarint a mikrohullámú sütőben.</p>
+                    <p>Hámozd meg és reszeld le a sárgarépát.</p>
+                    <p>Egy tálban keverd össze a reszelt sárgarépát, a kristálycukrot és az olvasztott margarint.</p>
+                    <p>Szitáld hozzá a lisztet, a sütőport és a fahéjat.</p>
+                    <p>A tojásokat verd fel külön egy kis tálban, majd öntsd a masszához.</p>
+                    <p>Kanalazd a masszát muffinformákba és süsd 20 percig.</p>
+                    <p>Ha elkészült, szórd meg porcukorral.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/repas-kokuszos-csokis-kuglof-gluten-mentes-recept-foto.webp" alt="Avatar">
+                    <h1>Répás kókuszos csokis kuglóf (glutén-mentes)</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>280 g reszelt sárgarépa</p>
+                    <p>160 g liszt</p>
+                    <p>120 g kókuszreszelék (és még egy kevés a kuglófforma kiszórásához)</p>
+                    <p>100 g darált dió</p>
+                    <p>150 g cukor</p>
+                    <p>4 db tojás</p>
+                    <p>1 db citrom reszelt héja</p>
+                    <p>1 csomag sütőpor</p>
+                    <p>1 dl olívaolaj</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Bekapcsoljuk a sütőt 180°-ra.</p>
+                    <p>Egy tálban összekeverjük az sárgarépát, tojást, cukrot, citromhéjat, olajat.</p>
+                    <p>Egy másik tálban összekeverjük a zabot, diót, kókuszreszeléket és a sütőport.</p>
+                    <p>Hozzákeverjük a száraz összetevőket a répás masszához.</p>
+                    <p>Kiolajozott és kókuszreszelékkel megszórt kuglófformába töltjük és 180°-on 35 percig sütjük.</p>
+                    <p>A 4 kocka étcsokit egy lábosban alacsony fokon felolvasztjuk és ráöntjük a kuglófra.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/sargarepas-kenyer-recept-foto.webp" alt="Avatar">
+                    <h1>Sárgarépás kenyér</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>380 g liszt</p>
+                    <p>100 g tisztított répa</p>
+                    <p>4 g só</p>
+                    <p>140 ml víz</p>
+                    <p>5 g instant élesztő</p>
+                    <p>1 evőkanál méz</p>
+                    <p>25 g étolaj</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Főzd meg, majd pürésítsd a répát.</p>
+                    <p>Mérd ki a lisztet, majd add hozzá az alapanyagot és a répapürét.</p>
+                    <p>Dagaszd, keleszd a tésztát egy órán át meleg helyen.</p>
+                    <p>Formászd, majd tedd bele az olajjal kikent sütőformába a tekercset, majd pihentesd egy órát.</p>
+                    <p>180°C-os sütőbe helyezd a kenyeret, majd 30 perc múlva vedd ki és hagyd kihűlni.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/lead_L_torok-sargarepas-szelet-recept-shutterstock_776930677.jpg" alt="Avatar">
+                    <h1>Török sárgarépás szelet</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>50 dkg sárgarépa</p>
+                    <p>20 dkg kristálycukor</p>
+                    <p>0.5 tk őrölt fahéj</p>
+                    <p>1 tk vaníliaaroma</p>
+                    <p>10 dkg dió, mogyoró, mandula vagy pisztáciabél</p>
+                    <p>5 dkg kókuszreszelék</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Meghámozzuk és aprítóban finomra vágjuk, vagy reszeljük a sárgarépát.</p>
+                    <p>Hozzákeverjük a cukrot, a fahéjat és a vaníliát, majd hozzáadjuk 2,5 dl vizet.</p>
+                    <p>Főzzük kis lángon, amíg az összes folyadék elpárolog. Közben lefedjük, de hagyunk egy kis részt a távozó hőnek.</p>
+                    <p>Belekeverjük a durvára vágott dióféléket, majd a masszát egy sütőpapírral bélelt tepsibe simítjuk.</p>
+                    <p>A hűtőbe tesszük legalább 1 órára, majd négyzetekre vágjuk és megforgatjuk mindegyiket a kókuszreszelékben.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/lead_L_kremes-repatorta-recept.jpg" alt="Avatar">
+                    <h1>Répatorta krémes töltelékkel</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>400 g reszelt sárgarépa</p>
+                    <p>130 g cukor</p>
+                    <p>1 kk. kanál gm. őrölt fahéj</p>
+                    <p>1 . kk. vanília aroma</p>
+                    <p>kb. 100 ml víz</p>
+                    <p>50-50 g dió és mandula (lehet más olajos mag is)</p>
+                    <p>gluténmentes kókuszreszelék</p>
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>A diót száraz serpenyőben megpirítjuk, majd durvára vágjuk.</p>
+                    <p>A répát megtisztítjuk és lereszeljük.</p>
+                    <p>Egy tálban összekeverjük a liszteket, a sütőport, a fahéjat és a sót.</p>
+                    <p>A tojásokat habosra verjük a cukrokkal, majd hozzáadjuk az olajat.</p>
+                    <p>Hozzáadjuk a lisztes keveréket, a sárgarépát és a diót, majd összeforgatjuk.</p>
+                    <p>A masszát kivajazott tortaformába öntjük, és 180 fokos sütőben 30 percig sütjük.</p>
+                    <p>Kihűtjük, majd hosszában félbevágjuk.</p>
+                    <p>A vajas krémsajtot habosra keverjük, hozzáadjuk a vanília belsejét, a citrom héját és a porcukrot.</p>
+                    <p>A mascarponés krémmel megkenjük a tortát.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/lead_L_repas-palacsinta-friss-kremsajttal-(1)-(1).jpg" alt="Avatar">
+                    <h1>Répás palacsinta friss krémsajttal</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>45 dkg sárgarépa, 2.5 dkg dió</p>
+                    <p>15 dkg liszt</p>
+                    <p>2 tk sütőpor</p>
+                    <p>1 db tojás, 25 dl tej, 4 ek vaj, 17.5 dkg tejszínes krémsajt</p>
+                    <p>0.25 tk só, 5 dkg porcukor, 4 ek barna cukor, 1 tk őrölt fahéj</p>
+
+
+                    <br>
+
+                    <h3>Elkészítés:</h3>
+                    <p>Megtisztítjuk és reszeljük a répát.</p>
+                    <p>A diót apróra vágjuk, majd összekeverjük a liszttel, sütőporral, fahéjjal, sóval és gyömbérrel.</p>
+                    <p>Tojást habosra keverünk a barna cukorral és tejjel.</p>
+                    <p>Hozzáadjuk a répát, majd a lisztes keverékbe forgatjuk.</p>
+                    <p>30 percig pihentetjük a tésztát.</p>
+                    <p>Egy tálban porcukrot és krémsajtot habosra keverünk.</p>
+                    <p>Forró serpenyőben kevés vajon kisütjük a tésztát.</p>
+                    <p>Palacsintákat készítünk, majd 50 fokos sütőben melegen tartjuk.</p>
+                    <p>Kisütött palacsintákat és krémsajtot rétegezünk.</p>
+                    <p>Friss gyümölccsel tálaljuk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="recipe/img/lead_L_shutterstock_788423437.jpg" alt="Avatar">
+                    <h1>Sárgarépás energiagolyó</h1>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Hozzávalók:</h3>
+                    <p>10 dkg dióbél</p>
+                    <p>15 dkg aszalt datolya</p>
+                    <p>2 db sárgarépa</p>
+                    <p>1 tk cukrozatlan kakaópor</p>
+                    <p>8 dkg kókuszreszelék</p>
+                    <p>0.5 tk őrölt fahéj</p>
+                    <p>0.5 tk őrölt szerecsendió</p>
+                    <p>Só ízlés szerint</p>
+
+                    <br>
+                    
+                    <h3>Elkészítés:</h3>
+                    <p>Késes aprítóba tesszük a diót és a datolyát, majd kissé darabosra vágjuk.</p>
+                    <p>Hozzáforgatjuk a meghámozott és lereszelt sárgarépát, a kakaóport, a kókuszreszelék felét, a fűszereket, és 1 csipet sót.</p>
+                    <p>Összedolgozzuk, majd a masszából kis golyókat formázunk.</p>
+                    <p>Meghempergetjük mindet a maradék kókuszreszelékben, majd betesszük a hűtőbe a golyókat, hogy kissé megszilárduljanak.</p>
+                    <p>Szobahőmérsékleten kínáljuk.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>repa</h3>
+                <p>&copy; 2024 repa. Minden jog fenntartva.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Linkek</h3>
+                <ul>
+                    <li><a href="aszf.html">Adatvédelmi szabályzat</a></li>
+                    <li><a href="ff.html">Felhasználási feltételek</a></li>
+                    <li><a href="undermaintenence.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kövess minket</h3>
+                <ul>
+                    <li><a href="undermaintenence.html">Facebook</a></li>
+                    <li><a href="undermaintenence.html">Instagram</a></li>
+                    <li><a href="undermaintenence.html">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
