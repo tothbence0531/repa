@@ -12,6 +12,16 @@ Repa is a web application developed by a group of two as a university project du
 - **Order Management**: Review and track your orders.
 - **Admin dashboard**: Add, edit or delete products
 
+## Screenshots
+
+![Screenshot 1](main.png)
+![Screenshot 2](shop.png)
+![Screenshot 3](profile.png)
+![Screenshot 4](basket.png)
+![Screenshot 4](recipe.png)
+![Screenshot 5](admin.png)
+![Screenshot 5](mobile.png)
+
 ## Technologies Used
 
 - **HTML**: Structure of the web pages.
@@ -31,13 +41,11 @@ Repa is a web application developed by a group of two as a university project du
 2. Set up a local web server (e.g., XAMPP, WAMP, or LAMP) and place the project files in the `htdocs` directory.
 
 3. Import the database:
-
    - Open phpMyAdmin or your preferred MySQL client.
    - Create a new database (`repadb`).
    - Import the SQL file provided in the repository.
 
 4. Configure the database connection:
-
    - Edit the database configuration file (`Repa/_rootphp/dbh.inc.php`) with your database credentials.
 
 5. Start your local server and access the application via `http://localhost/Repa`.
