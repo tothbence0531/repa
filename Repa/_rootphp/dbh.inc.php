@@ -3,13 +3,17 @@
      * adatbazis kapcsolat include file
      * mysql, db neve: repadb
      */
-    $serverName = "localhost";
-    $dbUsername = "root";
-    $dbPassword = "";
-    $dbName = "repadb";
+   $serverName = "localhost";
+$dbUsername = "repauser";
+$dbPassword = "repatitok";
+$dbName = "repadb";
+
 
     $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
 
-    if(!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+if (!$conn) {
+    die(
+        "MySQL connect error (" . mysqli_connect_errno() . "): "
+        . mysqli_connect_error()
+    );
+}
